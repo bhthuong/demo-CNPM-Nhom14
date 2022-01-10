@@ -1,0 +1,55 @@
+<%- include("../layout/head") %>
+
+<style>
+    .td {text-align: center;}
+</style>
+
+<body>
+    <div class="aside" style="border: none;">
+        <%- include("../layout/aside_admin") %>
+    </div>
+    <div class="content">
+        <%- include("../layout/nav_admin") %>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách loại sản phẩm</h3>
+                <% if (message.length> 0) { %>
+                    <div class="alert alert-danger">
+                        <%= message %>
+                    </div>
+                <% } %>
+                <br>
+                <div class="form-group">
+                    <a href="/admin/insertcate"><button class="btn btn-success px-5">Thêm Loại sản phẩm</button></a>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Loại</th>
+                                <th>Tùy chọn</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% var i=0 %>
+                            <% item.forEach(function(cate){ i++ %>
+                                <tr class="td">
+                                    <td><%-i %></td>
+                                    <td><%-cate.namecate %></td>
+                                    <td>
+                                        <a href="/admin/edit_cate/<%= cate._id %>">Sửa </a>|<a href="/delete_cate/<%= cate._id %>">Xóa </a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
