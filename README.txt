@@ -16,3 +16,6 @@ Sau khi đăng ký thì sẽ trở lại trang đăng nhập và tiến hành đ
 3. Đối với admin thì sẽ được cấp sẵn một tài khoản với 
 tên đăng nhập là "admin@gmail.com" và password là "123123".
 Hoặc có thể chỉnh sửa role từ user sang admin trên csdl.
+
+-----------
+link github up source code: https://github.com/bhthuong/demo-CNPM-Nhom14.git
